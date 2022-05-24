@@ -11,6 +11,11 @@ body {
   margin-left: -20px;
 }
 
+label {
+  white-space: nowrap;
+  cursor: pointer;
+}
+
 .literallyASpacer {
   display: flex;
   flex: 1;
@@ -19,6 +24,7 @@ body {
 li {
   color: #D0E504;
   font-size: 14px;
+  padding: .5rem;
 }
 
 .button {
