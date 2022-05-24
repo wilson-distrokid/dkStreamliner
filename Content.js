@@ -1,12 +1,9 @@
 function main() {
-  // load the users choices from options.js via chrome sync
-  chrome.storage.sync.get([ 'userPageDesired', 'ccPageDesired', 'aPageDesired' ], function(data) {
-    localStorage.setItem('aPageDesired', Object.values(data)[0]);
-    localStorage.setItem('ccPageDesired', Object.values(data)[1]);
-    localStorage.setItem('userPageDesired', Object.values(data)[2]);
-  });
-
-  let oohSelecta = [JSON.parse(localStorage.getItem('userPageDesired')), JSON.parse(localStorage.getItem('ccPageDesired')), JSON.parse(localStorage.getItem('aPageDesired'))];
+  if (window.location.href.indexOf("this+is+just+so+that+wilsons+extension+will+work+lol") > -1) {
+    alert("nice refresh dude! close this page now :)");
+    window.close();
+    }
+  let oohSelecta = loadSettings();
 
   // find the search type
   let searchType = document.querySelector(".searchContent");
@@ -32,6 +29,19 @@ function main() {
     searchbyISRC();
   };
 };
+
+function loadSettings() {
+  // load the users choices from options.js via chrome sync
+  //*
+  chrome.storage.sync.get([ 'userPageDesired', 'ccPageDesired', 'aPageDesired' ], function(data) {
+    localStorage.setItem('aPageDesired', Object.values(data)[0]);
+    localStorage.setItem('ccPageDesired', Object.values(data)[1]);
+    localStorage.setItem('userPageDesired', Object.values(data)[2]);
+  }); //*/
+
+  let oohSelecta = [JSON.parse(localStorage.getItem('userPageDesired')), JSON.parse(localStorage.getItem('ccPageDesired')), JSON.parse(localStorage.getItem('aPageDesired'))];
+  return oohSelecta;
+}
 
 function searchByEmail(userId, oohSelecta) {
     // create array of urls for specific desired pages.
@@ -78,7 +88,7 @@ function searchByEmail(userId, oohSelecta) {
 // opens all album pages that contain searched ISRC in new tabs, except opens last link in extension search tab.
 function searchbyISRC() {
   // get array of all urls inside .searchContent
-  var searchContentLinks = document.querySelector(".searchContent").querySelectorAll("a");
+  var searchContentLinks = document.querySelectorAll(".searchContent a");
 
   // skips all user page urls
   for (let i = 0; i < searchContentLinks.length -2; i = i+2) {
