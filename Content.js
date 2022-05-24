@@ -1,5 +1,3 @@
-
-
 function main() {
   // load the users choices from options.js via chrome sync
   chrome.storage.sync.get([ 'userPageDesired', 'ccPageDesired', 'aPageDesired' ], function(data) {
@@ -7,6 +5,8 @@ function main() {
     localStorage.setItem('ccPageDesired', Object.values(data)[1]);
     localStorage.setItem('userPageDesired', Object.values(data)[2]);
   });
+
+  // just making sure i didnt break the repo!
 
   let oohSelecta = [JSON.parse(localStorage.getItem('userPageDesired')), JSON.parse(localStorage.getItem('ccPageDesired')), JSON.parse(localStorage.getItem('aPageDesired'))];
 
