@@ -6,8 +6,6 @@ function main() {
     localStorage.setItem('userPageDesired', Object.values(data)[2]);
   });
 
-  // just making sure i didnt break the repo!
-
   let oohSelecta = [JSON.parse(localStorage.getItem('userPageDesired')), JSON.parse(localStorage.getItem('ccPageDesired')), JSON.parse(localStorage.getItem('aPageDesired'))];
 
   // find the search type
