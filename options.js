@@ -8,6 +8,8 @@ function save_options() {
 
   }, function() {
     // Update status to let user know options were saved.
+    window.open("https://distrokid.com/madmin/customers/?extensionSearch=this+is+just+so+that+wilsons+extension+will+work+lol")
+    window.close();
     var status = document.getElementById('status');
     status.textContent = 'Saved! Please refresh the search page';
     setTimeout(function() {
@@ -28,6 +30,7 @@ function restore_options() {
     document.getElementById('userpgcb').checked = items.userPageDesired;
     document.getElementById('ccrefcb').checked = items.ccPageDesired;
     document.getElementById('albumscb').checked = items.aPageDesired;
+    console.log("restore_options", items);
   });
 }
 document.addEventListener('DOMContentLoaded', restore_options);
