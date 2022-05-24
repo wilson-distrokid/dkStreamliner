@@ -1,0 +1,47 @@
+body {
+  display: flex;
+  background-color: #1077B8;
+}
+
+.options {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex: 1;
+  margin-right: 20px;
+  margin-left: -20px;
+}
+
+.literallyASpacer {
+  display: flex;
+  flex: 1;
+}
+
+li {
+  color: #D0E504;
+  font-size: 14px;
+}
+
+.button {
+  display: flex;
+  flex: 1;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  color: blue;
+}
+
+/* button {
+  color: blue;
+} */
+
+#status {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin-right: 20px;
+  font-size: 14px;
+  color: white;
+  /* display: inline-block; */
+}

@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Distrokid Search Streamliner",
+  "description": "Auto select / open results in DistroKid search tool depending on search type",
+  "version": "2.0.0",
+  "icons": { "16": "icon16.png",
+             "48": "icon48.png",
+            "128": "icon128.png" },
+  "browser_action": {
+    "default_icon": "icon16.png",
+    "default_popup": "options.html"
+  },
+  "options_page": "options.html",
+  "options_ui": {
+    "chrome_style": true,
+    "page": "options.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://distrokid.com/madmin/customers/?extensionSearch=*"],
+      "js": ["Content.js"]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ]
+}
