@@ -22,7 +22,7 @@ function main() {
 
   // if the search type is UPC, just open the only available link.
   } else if (searchType.indexOf("UPC") != -1) {
-    window.open(document.querySelector(".searchContent").children[3], "_self");
+    window.open(document.querySelector(".searchContent a"), "_self");
 
   // if the search type is ISRC, run conditional ISRC link opening code
   } else if (searchType.indexOf("ISRC")) {
